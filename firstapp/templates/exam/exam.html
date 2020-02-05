@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+ <head>
+ <meta charset="utf-8">
+ <title>Employee Info</title>
+ </head>
+ <body>
+ <h1>Employee Info</h1>
+ {% if Exam %}
+ <table>
+ <thead>
+ <th>Student Name</th>
+ <th>Student Uid</th>
+ <th>Student Mobile</th>
+ <th>Student Address</th>
+ </thead>
+ {% for e in Exam %}
+ <tr>
+ <td>{{e.s_name}}</td>
+
+ <td>{{e.uid}}</td>
+ <td>{{e.mobile_no}}</td>
+ <td>{{e.address}}</td>
+ </tr>
+ {% endfor %}
+ </table>
+ {% else %}
+ <p>No Exam Record Found</p>
+ {% endif %}
+ </body>
+</html>

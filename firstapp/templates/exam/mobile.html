@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main">
+
+
+</div>
+<div id="details">
+    <table>
+        <thead>
+        <th>Student Name </th>
+        <th>Student roll no</th>
+        <th>Student group</th>
+        <th>Mobile Number</th>
+        </thead>
+        {% if object_list %}
+        {% for s in object_list %}
+        <tr>
+            <td>{{s.name}}</td>
+            <td>{{s.roll}}</td>
+            <td>{{s.blood_group}}</td>
+
+            {% for i in s.mobiledata.all %}
+
+            <td>{{i.mobile}}</td>
+            {% endfor %}
+        </tr>
+        {% endfor %}
+        {% else %}
+        <p>No student Details </p>
+        {% endif %}
+    </table>
+
+</div>
+</body>
+</html>
